@@ -19,7 +19,7 @@ void Patient_Reserve_Slot(u8 new_patientid);
 
 void Patient_Cancel_Reserve(u8 new_patientid);
 
-void print(void); // function to make sure i working correctly will not be available in the last version of this app
+void print(u8 new_patientid); // function to make sure i working correctly will not be available in the last version of this app
 
 #define ADMIN_PASS         1234
 #define WRONG_PASS_COUNTER 3

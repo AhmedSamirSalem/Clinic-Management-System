@@ -87,7 +87,9 @@ void Admin_Mode_operations(void)
             }
 			case PRINT_PATIENT:
 			{
-				print();
+				printf("please enter patient id : ");
+				scanf("%hhu",&new_patientid);
+				print(new_patientid);
 				break;
 			}
 			default:printf("invaild Choice\n");break;
@@ -290,22 +292,34 @@ void Patient_Cancel_Reserve(u8 new_patientid)
 
 
 
-void print(void)
+void print(u8 new_patientid)
 {
-	Patient_t * Current_Patient=Head;
-	while(Current_Patient->next!=NULL)
-	{
-		printf("Patient id = %d\n",Current_Patient->Patient_id);
-		printf("Patient name : %s\n",Current_Patient->Patient_name);
-		printf("Patient age = %d\n",Current_Patient->Patient_age);
-		printf("Patient gender : %s\n",Current_Patient->Patient_gender);
-		printf("Time = %d",Current_Patient->Patient_time);
-		Current_Patient=Current_Patient->next;
-	}
-		printf("Patient id = %d\n",Current_Patient->Patient_id);
-		printf("Patient name : %s\n",Current_Patient->Patient_name);
-		printf("Patient age = %d\n",Current_Patient->Patient_age);
-		printf("Patient gender : %s\n",Current_Patient->Patient_gender);
-		printf("Time = %d",Current_Patient->Patient_time);
-
+		Patient_t * Current_Patient=Head;
+	if(Head!=NULL)
+    {
+       	while((Current_Patient->next!=NULL) &&(Current_Patient->Patient_id!=new_patientid))
+        {
+            Current_Patient=Current_Patient->next;
+        }
+        if(Current_Patient->Patient_id==new_patientid)
+        {
+			printf("Patient id = %d\n",Current_Patient->Patient_id);
+			printf("Patient name : %s\n",Current_Patient->Patient_name);
+			printf("Patient age = %d\n",Current_Patient->Patient_age);
+			printf("Patient gender : %s\n",Current_Patient->Patient_gender);
+			if(Current_Patient->Patient_time!=-1)
+			{
+				printf("Time = %d\n",Current_Patient->Patient_time);
+			}
+		}
+        else
+        {
+            printf("The id does not exist \n");
+        }
+    }
+    else
+    {
+        printf("The id does not exist \n");
+    }
+	
 }
