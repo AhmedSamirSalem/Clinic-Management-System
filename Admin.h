@@ -13,8 +13,11 @@ void Admin_Mode_operations(void);
 
 void Add_Patient(u8 new_patientid);
 
-
 void Edit_Patient(u8 new_patientid);
+
+void Patient_Reserve_Slot(u8 new_patientid);
+
+void Patient_Cancel_Reserve(u8 new_patientid);
 
 void print(void); // function to make sure i working correctly will not be available in the last version of this app
 

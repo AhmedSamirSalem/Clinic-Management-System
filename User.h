@@ -8,7 +8,7 @@ void User_Mode_Operations(void);
 
 void View_Patient_Record(u8 new_patientid);
 
-
+void View_today_Reservations(void);
 #define VIEW_PATIENT  	  1
 #define VIEW_RESERVATIONS 2
 

@@ -7,6 +7,7 @@ typedef struct Patient
 	u8 Patient_age;
 	u8 Patient_gender[7];
 	u8 Patient_id;
+	s8 Patient_time;
 	struct Patient * next;
 }Patient_t;
 
